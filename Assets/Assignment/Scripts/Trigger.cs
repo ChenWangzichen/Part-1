@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
+    public GameObject door1;
+    public GameObject door2;
     SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
@@ -18,10 +20,14 @@ public class Trigger : MonoBehaviour
         if (spriteRenderer.flipX == false)
         {
             spriteRenderer.flipX = true;
+            door1.SetActive(false);
+            door2.SetActive(true);
         }
         else if (spriteRenderer.flipX)
         {
             spriteRenderer.flipX = false;
+            door1.SetActive(true);
+            door2.SetActive(false);
         }
     }
 
